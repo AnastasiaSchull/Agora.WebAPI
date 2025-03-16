@@ -1,0 +1,22 @@
+name: Sync to Dev Repos
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  sync:
+    run-on: ubuntu-latest
+
+  steps:
+    - name: Setup SSH
+      run:  |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY_LEV }}" > ~/.ssh/id_rsa_lev
+        chmod 600 ~/ssh/id_rsa_lev
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+    - name: Push to Dev lev
+      run: |
+        git remote add github-lev git@github.com:LevPavelko/Agora.WebAPI.git
+        git push github-lev master
