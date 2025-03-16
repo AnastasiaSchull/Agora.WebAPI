@@ -14,7 +14,7 @@ jobs:
       run:  |
         mkdir -p ~/.ssh
         echo "${{ SSH_PRIVATE_KEY_LEV }}" > ~/.ssh/id_rsa_lev
-        chmod 600 ~/ssh/id_rsa_lev
+        chmod 600 ~/.ssh/id_rsa_lev
         ssh-keyscan github.com >> ~/.ssh/known_hosts
     - name: Push to Dev lev
       run: |
@@ -26,7 +26,7 @@ jobs:
       run:  |
         mkdir -p ~/.ssh
         echo "${{ SSH_PRIVATE_KEY_IRINA }}" > ~/.ssh/id_rsa_irina
-        chmod 600 ~/ssh/id_rsa_irina
+        chmod 600 ~/.ssh/id_rsa_irina
         ssh-keyscan github.com >> ~/.ssh/known_hosts
     - name: Push to Dev Irina
       run: |
@@ -37,7 +37,7 @@ jobs:
       run:  |
         mkdir -p ~/.ssh
         echo "${{ SSH_PRIVATE_KEY_ANASTASIA }}" > ~/.ssh/id_rsa_nastasia
-        chmod 600 ~/ssh/id_rsa_nastasia
+        chmod 600 ~/.ssh/id_rsa_nastasia
         ssh-keyscan github.com >> ~/.ssh/known_hosts
     - name: Push to Dev Anastasia
       run: |
@@ -48,7 +48,7 @@ jobs:
       run:  |
         mkdir -p ~/.ssh
         echo "${{ SSH_PRIVATE_KEY_VLADYSLAV }}" > ~/.ssh/id_rsa_vlad
-        chmod 600 ~/ssh/id_rsa_vlad
+        chmod 600 ~/.ssh/id_rsa_vlad
         ssh-keyscan github.com >> ~/.ssh/known_hosts
     - name: Push to Dev Vladyslav
       run: |
